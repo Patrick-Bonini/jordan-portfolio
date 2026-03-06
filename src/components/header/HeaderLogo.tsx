@@ -29,7 +29,7 @@ export default function HeaderLogo({ alt, className = '' }: HeaderLogoProps) {
 
       {/* Hover Logo */}
       <img
-        src="/logohover.png"
+        src="/logoHOVER.png
         alt={`${alt} Hover`}
         className="absolute inset-0 w-full h-auto opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       />
