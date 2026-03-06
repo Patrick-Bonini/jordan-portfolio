@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	color-scheme: light;
+	--site-bg: #FAF8ED;
+	--site-fg: #0d0d0d;
+	--site-text-soft: rgba(17, 17, 17, 0.85);
+	--site-border: rgba(17, 17, 17, 0.2);
+	--site-button-bg: #1a1a1a;
+	--site-button-text: #ffffff;
+	--nav-overlay: rgba(17, 17, 17, 0.24);
+	--nav-surface: rgba(250, 248, 237, 0.82);
+	--nav-border: rgba(17, 17, 17, 0.14);
+	--nav-close: rgba(17, 17, 17, 0.5);
+	--nav-divider: rgba(17, 17, 17, 0.08);
+	--nav-text-active: rgba(17, 17, 17, 1);
+	--nav-text-inactive: rgba(17, 17, 17, 0.62);
+	--nav-preview-bg: rgba(17, 17, 17, 0.06);
+	--nav-preview-card-bg: rgba(255, 255, 255, 0.45);
+	--nav-preview-card-border: rgba(17, 17, 17, 0.1);
+	--nav-standby-bg: rgba(255, 255, 255, 0.4);
+	--nav-standby-text: rgba(17, 17, 17, 0.25);
+	--nav-social-filter: none;
+	--header-py-mobile: 0rem;
+	--header-py-desktop: 0.75rem;
+	--about-main-offset-mobile: 2rem;
+	--about-main-offset-desktop: 3.5rem;
+	--contact-main-offset-mobile: 1.5rem;
+	--contact-main-offset-desktop: 2rem;
+	--work-main-offset-mobile: 0.5rem;
+	--work-main-offset-desktop: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		color-scheme: dark;
+		--site-bg: #121212;
+		--site-fg: #f4f4ef;
+		--site-text-soft: rgba(244, 244, 239, 0.85);
+		--site-border: rgba(244, 244, 239, 0.28);
+		--site-button-bg: #f4f4ef;
+		--site-button-text: #121212;
+		--nav-overlay: rgba(0, 0, 0, 0.56);
+		--nav-surface: rgba(10, 10, 10, 0.68);
+		--nav-border: rgba(255, 255, 255, 0.1);
+		--nav-close: rgba(255, 255, 255, 0.45);
+		--nav-divider: rgba(255, 255, 255, 0.08);
+		--nav-text-active: rgba(255, 255, 255, 1);
+		--nav-text-inactive: rgba(255, 255, 255, 0.62);
+		--nav-preview-bg: rgba(0, 0, 0, 0.22);
+		--nav-preview-card-bg: rgba(255, 255, 255, 0.05);
+		--nav-preview-card-border: rgba(255, 255, 255, 0.08);
+		--nav-standby-bg: rgba(10, 10, 10, 1);
+		--nav-standby-text: rgba(255, 255, 255, 0.1);
+		--nav-social-filter: invert(1);
+	}
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root[data-theme='light'] {
+	color-scheme: light;
+	--site-bg: #FAF8ED;
+	--site-fg: #111111;
+	--site-text-soft: rgba(17, 17, 17, 0.85);
+	--site-border: rgba(17, 17, 17, 0.2);
+	--site-button-bg: #1a1a1a;
+	--site-button-text: #ffffff;
+	--nav-overlay: rgba(17, 17, 17, 0.24);
+	--nav-surface: rgba(250, 248, 237, 0.82);
+	--nav-border: rgba(17, 17, 17, 0.14);
+	--nav-close: rgba(17, 17, 17, 0.5);
+	--nav-divider: rgba(17, 17, 17, 0.08);
+	--nav-text-active: rgba(17, 17, 17, 1);
+	--nav-text-inactive: rgba(17, 17, 17, 0.62);
+	--nav-preview-bg: rgba(17, 17, 17, 0.06);
+	--nav-preview-card-bg: rgba(255, 255, 255, 0.45);
+	--nav-preview-card-border: rgba(17, 17, 17, 0.1);
+	--nav-standby-bg: rgba(255, 255, 255, 0.4);
+	--nav-standby-text: rgba(17, 17, 17, 0.25);
+	--nav-social-filter: none;
+}
+
+:root[data-theme='dark'] {
+	color-scheme: dark;
+	--site-bg: #121212;
+	--site-fg: #f4f4ef;
+	--site-text-soft: rgba(244, 244, 239, 0.85);
+	--site-border: rgba(244, 244, 239, 0.28);
+	--site-button-bg: #f4f4ef;
+	--site-button-text: #121212;
+	--nav-overlay: rgba(0, 0, 0, 0.56);
+	--nav-surface: rgba(10, 10, 10, 0.68);
+	--nav-border: rgba(255, 255, 255, 0.1);
+	--nav-close: rgba(255, 255, 255, 0.45);
+	--nav-divider: rgba(255, 255, 255, 0.08);
+	--nav-text-active: rgba(255, 255, 255, 1);
+	--nav-text-inactive: rgba(255, 255, 255, 0.62);
+	--nav-preview-bg: rgba(0, 0, 0, 0.22);
+	--nav-preview-card-bg: rgba(255, 255, 255, 0.05);
+	--nav-preview-card-border: rgba(255, 255, 255, 0.08);
+	--nav-standby-bg: rgba(10, 10, 10, 1);
+	--nav-standby-text: rgba(255, 255, 255, 0.1);
+	--nav-social-filter: invert(1);
 }
